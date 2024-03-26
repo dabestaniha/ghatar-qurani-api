@@ -10,7 +10,7 @@ $result->execute();
 // بررسی نتیجه
 if ($result->rowCount() > 0) {
     // دریافت ردیف اطلاعات
-    $row = $result->fetchColumn();
+    $row = $result->fetch();
 
     // ایجاد یک آرایه اطلاعات
     $ShopData = array(
