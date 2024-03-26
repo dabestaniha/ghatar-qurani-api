@@ -4,12 +4,13 @@ include_once 'base.php';
 
 // دریافت اطلاعات از دیتابیس (فرض شده است که جدول popup_data وجود دارد)
 $sql = "SELECT * FROM shop_data";
-$result = $conn->query($sql);
+$result = $conn->prepare($sql);
+$result->execute();
 
 // بررسی نتیجه
-if ($result->num_rows > 0) {
+if ($result->rowCount() > 0) {
     // دریافت ردیف اطلاعات
-    $row = $result->fetch_assoc();
+    $row = $result->fetchColumn();
 
     // ایجاد یک آرایه اطلاعات
     $ShopData = array(
