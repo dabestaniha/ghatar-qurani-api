@@ -42,7 +42,4 @@ if ($result->rowCount() > 0) {
     // در صورتی که اطلاعاتی یافت نشود
     echo "No data found";
 }
-
-// بستن اتصال به دیتابیس
-$conn->close();
 ?>
